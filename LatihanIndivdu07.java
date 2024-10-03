@@ -6,7 +6,7 @@ public class LatihanIndivdu07 {
 
         String jenis;
         int jumlah;
-        double  totalHarga, totalDiskon;
+        double  totalJumlah, totalDiskon, totalHarga;
         double harga = 20000;
         double diskon = 0;
 
@@ -39,9 +39,11 @@ public class LatihanIndivdu07 {
             }
         }
 
-        totalDiskon = (jumlah * harga) * diskon;
-        totalHarga = harga - totalDiskon;
+        totalJumlah = jumlah * harga;
+        totalDiskon = totalJumlah * diskon;
+        totalHarga = totalJumlah - totalDiskon;
 
+        System.out.println("Total harga tanpa diskon = " + totalJumlah);
         System.out.println("Jadi total diskonnya adalah = " + totalDiskon);
         System.out.println("Jadi total harganya adalah = " + totalHarga);
     }
