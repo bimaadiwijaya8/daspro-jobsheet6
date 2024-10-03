@@ -6,7 +6,7 @@ public class Pemilihan2Percobaan207 {
 
         double diskon, harga, total_bayar;
         int pilihan_menu;
-        String member;
+        String member, pembayaranDigital;
 
         System.out.println("-------------------------");
         System.out.println("===== Menu Kafe JTI =====");
@@ -22,6 +22,9 @@ public class Pemilihan2Percobaan207 {
 
         System.out.println("Apakah punya member (y/n) ? = ");
         member = input07.nextLine();
+
+        System.out.println("Apakah pembayarannya menggunakan QRIS/Tunai = ");
+        pembayaranDigital = input07.nextLine();
 
         System.out.println("----------------------------------");
 
@@ -48,6 +51,11 @@ public class Pemilihan2Percobaan207 {
             total_bayar = harga - (harga * diskon);
             System.out.println("Total bayar setelah diskon = " + total_bayar);
 
+            if (pembayaranDigital.equalsIgnoreCase("QRIS")) {
+            total_bayar -= 1000;
+            System.out.println("Jadi total keseluruhannya adalah = " + total_bayar);
+            }
+
         } else if (member.equalsIgnoreCase("n")) {
             if (pilihan_menu == 1) {
                 harga = 14000;
@@ -67,6 +75,11 @@ public class Pemilihan2Percobaan207 {
             }
 
             System.out.println("Total bayar = " + harga);
+
+            if (pembayaranDigital.equalsIgnoreCase("QRIS")) {
+            harga -= 1000;
+            System.out.println("Jadi total keseluruhannya adalah = " + harga);
+            }
 
         } else {
             System.out.println("Member tidak valid");
